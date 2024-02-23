@@ -261,13 +261,14 @@
             });  // 원하는 파일 경로를 삽입하면 된다
         });
     </script> 
+
     <!-- slick -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!-- snsSlide / titleani -->
 	<script type="text/javascript">
-        $(document).ready(function(){            
+        $(document).ready(function(){
             // 타이틀 영역 로드
             function titleani(){
                 $('.titleani').slick({
@@ -315,33 +316,33 @@
             // 메인영역 로드
             function mainani(){
                 function doc(){ // 함수 이름
-                // 목록항목의 p와 a를 둘러싸시오
-                $("#product ul.list li").each(function(){// each()는 앞요소갯수만큼 순차적으로 실행하시오; 
-                        $(this).children("p,a").wrapAll("<div class='wtext'></div>"); 
-                        // wrapAll('<태그></태그');앞요소를 둘러싸시오(괄호안의 태그로)
-                        $(".wtext").hide();
-                    });           
-                    // 프로덕트 제품오버시 설명글 표시
-                        //목록항목에 마우스올리면 실행하시오
-                $("#product ul.list li").hover(
-                        function(){ //mouseenter
-                            // 마우스올린 li의 자식인 wtext를 fadeIn();하시오
-                            $(this).children(".wtext").stop().fadeIn();//fadeIn() 서서히 나타나게 하시오
-                            // 마우스올린 li의 자식인 wtext에 클래스를 붙여라(scaleX100)
-                            $(this).children(".wtext").addClass("scaleX100");
-                            // 마우스올린 li가 아닌 다른 형제요소들의 자식 wtext에 클래스를 없애라(scaleX100)
-                            $(this).siblings().children("wtext").removeClass("scaleX100");
+                    // 목록항목의 p와 a를 둘러싸시오
+                    $("#product ul.list li").each(function(){// each()는 앞요소갯수만큼 순차적으로 실행하시오; 
+                            $(this).children("p,a").wrapAll("<div class='wtext'></div>"); 
+                            // wrapAll('<태그></태그');앞요소를 둘러싸시오(괄호안의 태그로)
+                            $(".wtext").hide();
+                        });           
+                        // 프로덕트 제품오버시 설명글 표시
+                            //목록항목에 마우스올리면 실행하시오
+                    $("#product ul.list li").hover(
+                            function(){ //mouseenter
+                                // 마우스올린 li의 자식인 wtext를 fadeIn();하시오
+                                $(this).children(".wtext").stop().fadeIn();//fadeIn() 서서히 나타나게 하시오
+                                // 마우스올린 li의 자식인 wtext에 클래스를 붙여라(scaleX100)
+                                $(this).children(".wtext").addClass("scaleX100");
+                                // 마우스올린 li가 아닌 다른 형제요소들의 자식 wtext에 클래스를 없애라(scaleX100)
+                                $(this).siblings().children("wtext").removeClass("scaleX100");
 
 
-                        },
-                        function(){ //mouseleave
-                            $(this).children(".wtext").stop().fadeOut();//서서히 사라지게 하시오
-                            // 마우스올린 li의 자식인 wtext에 클래스를 없애라(scaleX100)
-                            $(this).children(".wtext").removeClass("scaleX100");
-                        }
-                ); 
-                /* 반응형에 따른 요소제어(보이기) */
-                if($(window).width()<=1200){ // <= 작거나 같다(비교연산자) / $(window).width() 윈도우의 크기값을 가져와라
+                            },
+                            function(){ //mouseleave
+                                $(this).children(".wtext").stop().fadeOut();//서서히 사라지게 하시오
+                                // 마우스올린 li의 자식인 wtext에 클래스를 없애라(scaleX100)
+                                $(this).children(".wtext").removeClass("scaleX100");
+                            }
+                    ); 
+                    /* 반응형에 따른 요소제어(보이기) */
+                    if($(window).width()<=1200){ // <= 작거나 같다(비교연산자) / $(window).width() 윈도우의 크기값을 가져와라
                         // 모바일시 brand제목을 헤더로 옮기기
                         $("aside .wrap h2").appendTo("header .wrap nav"); 
                         /* 타이틀이미지 모바일용으로 교체 */
@@ -386,17 +387,12 @@
                             i++;
                             m=1;
                         });
-                        
-                    
-
-
-
                     }
-                //윈도우창사이즈가 바뀌면 실행하시오
-                $(window).resize(function(){
+                    //윈도우창사이즈가 바뀌면 실행하시오
+                    $(window).resize(function(){
                         if($(window).width()<=1200){
                             $("aside .wrap h2").appendTo("header .wrap nav"); 
-                        /* 타이틀이미지 모바일용으로 교체 */
+                            /* 타이틀이미지 모바일용으로 교체 */
                             //타이틀영역의 img태그의 속성값을 변경하시오
                             /*
                             $("div#subtitle .wrap img[src='img/i1.jpg']").attr("src","img/m/m-title1.jpg");
@@ -434,24 +430,9 @@
                                 $("div#subtitle .wrap img:nth-child("+n+")").attr("src","img/i"+n+".jpg");
                                 n++; //n의 값을 1씩 증가시키시오.
                             });
-
                         }
-                });
-                /*
-                    / 다른 요소를 잘라내서 원하는 요소안에 넣기
-                        잘라내올 요소.appendTo("붙여넣을 요소");
-
-                        / 조건문 if
-                        구문형식 if(조건){조건이 맞으면 실행될 구문}
-                        /$(window) : 브라우저창
-                        / width();너비를 가져오시오
-                        / < : 작다면
-
-                        if($(window).width()<769){ // 창크기가 769미만이라면 
-                            $("aside .wrap h2").appendTo("header .wrap nav");  //  h2를 ..로 옮겨라
-                        }
-                */
-                
+                    });
+                }
                 $('.snsSlide').slick({
                     infinite: true,
                     slidesToShow: 3,
@@ -516,9 +497,8 @@
             $("aside").load("aside.html");
             // 포터 로드
             $("footer").load("footer.html");
-            });
+        });
     </script>
-    <!-- aside애니 -->
 </head>
 <body>
     
