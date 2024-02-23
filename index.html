@@ -336,8 +336,10 @@
                         }
                     ]    
                 });
-            }
-            $("#subtitle").load("subtitle.html");
+            };
+            $("#subtitle").load("subtitle.html",function(){
+                titleani();
+            });
         });
     </script>
     <!-- aside애니 -->
