@@ -254,6 +254,8 @@
             $("footer .btop").click(function(){
                 $("html,body").animate({scrollTop:0},1000);//문서스크롤 애니
             });
+        $("#top").load("header.html");  // 원하는 파일 경로를 삽입하면 된다
+        $("footer").load("footer.html");
 
         });
     </script> 
@@ -362,9 +364,6 @@
                 $("aside").toggleClass("asideSliding");
                 $("header .wrap nav .wgnb").removeClass("wgnbShow");
             });
-            $("#top").load("header.html");  // 원하는 파일 경로를 삽입하면 된다
-            $("footer").load("footer.html");
-
         });
     </script>
 </head>
