@@ -535,6 +535,14 @@
             });
 
             // footer로드
+            function topani(){
+                $("footer .btop").click(function(){
+                    $("html,body").animate({scrollTop:0},1000);//문서스크롤 애니
+                });
+            }
+            $("footer").load("footer.html",function(){
+                topani();
+            });
             $("footer").load("footer.html");
         });
     </script>
