@@ -484,7 +484,7 @@
                 mainani();
             });
             // 어사이드 로드
-            function aside{
+            function asideani(){
                 $("aside .wrap ul.list > li h3").hover(function(){
                     if($(window).width()>1200){
                         $("aside").addClass("sliding");
@@ -512,7 +512,6 @@
                     $("aside").toggleClass("asideSliding");
                     $("header .wrap nav .wgnb").removeClass("wgnbShow");
                 });
-                
             };
             $("aside").load("aside.html");
             // 포터 로드
